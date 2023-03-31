@@ -1,6 +1,7 @@
 import pygame
 from .cmd_module import (QuitCommand, CommandType)
 from .mem_module import Memory
+from .gui_module import Display
 
 APP_FPS = 60
 APP_WINDOW_SIZE = (800, 600)
@@ -21,6 +22,7 @@ class App:
         self.delta = 0
 
         self.mem = Memory()
+        self.gui = Display()
 
         return
 
