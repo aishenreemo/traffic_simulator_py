@@ -3,8 +3,10 @@ from .app_module import App
 
 
 def main():
-    pygame.init()
     app = App()
+
+    pygame.init()
+    app.init()
 
     while app.running:
         app.listen()

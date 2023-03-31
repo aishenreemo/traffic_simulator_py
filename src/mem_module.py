@@ -8,7 +8,7 @@ class Memory:
 
         return cls.instance
 
-    def __init__(self):
+    def init(self):
         self.window_size = pygame.display.get_surface().get_size()
 
         return

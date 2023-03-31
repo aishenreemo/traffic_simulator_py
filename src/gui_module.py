@@ -5,7 +5,7 @@ class Display:
 
         return cls.instance
 
-    def __init__(self):
+    def init(self):
         self.screen_vec = []
         self.screen_ptr = 0
 

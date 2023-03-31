@@ -14,7 +14,7 @@ class App:
 
         return cls.instance
 
-    def __init__(self):
+    def init(self):
         self.running = True
         self.cmd_queue = []
         self.screen = pygame.display.set_mode(APP_WINDOW_SIZE)
@@ -23,6 +23,9 @@ class App:
 
         self.mem = Memory()
         self.gui = Display()
+
+        self.mem.init()
+        self.gui.init()
 
         return
 
@@ -40,6 +43,9 @@ class App:
     def update(self):
         if not self.running:
             return
+
+        self.mem.update()
+        self.gui.update()
 
         for command in self.cmd_queue:
             if command.type == CommandType.QUIT:
