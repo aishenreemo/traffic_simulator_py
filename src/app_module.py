@@ -1,11 +1,18 @@
 import pygame
 from .cmd_module import (QuitCommand, CommandType)
+from .mem_module import Memory
 
 APP_FPS = 60
 APP_WINDOW_SIZE = (800, 600)
 
 
 class App:
+    def __new__(cls):
+        if not hasattr(cls, 'instance'):
+            cls.instance = super(App, cls).__new__(cls)
+
+        return cls.instance
+
     def __init__(self):
         self.running = True
         self.cmd_queue = []
@@ -13,13 +20,9 @@ class App:
         self.clock = pygame.time.Clock()
         self.delta = 0
 
+        self.mem = Memory()
+
         return
-
-    def __new__(cls):
-        if not hasattr(cls, 'instance'):
-            cls.instance = super(App, cls).__new__(cls)
-
-        return cls.instance
 
     def listen(self):
         if not self.running:
@@ -49,7 +52,7 @@ class App:
         if not self.running:
             return
 
-        self.screen.fill("purple")
+        self.screen.fill("black")
         pygame.display.flip()
 
         return
