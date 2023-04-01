@@ -15,7 +15,7 @@ APP_KEYDOWN_INTERVAL = 100
 
 class App:
     def __new__(cls):
-        if not hasattr(cls, 'instance'):
+        if not hasattr(cls, "instance"):
             cls.instance = super(App, cls).__new__(cls)
 
         return cls.instance

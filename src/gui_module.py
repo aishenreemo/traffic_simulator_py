@@ -1,6 +1,6 @@
 class Display:
     def __new__(cls):
-        if not hasattr(cls, 'instance'):
+        if not hasattr(cls, "instance"):
             cls.instance = super(Display, cls).__new__(cls)
 
         return cls.instance

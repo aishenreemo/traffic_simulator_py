@@ -3,7 +3,7 @@ import pygame
 
 class Memory:
     def __new__(cls):
-        if not hasattr(cls, 'instance'):
+        if not hasattr(cls, "instance"):
             cls.instance = super(Memory, cls).__new__(cls)
 
         return cls.instance
