@@ -1,7 +1,10 @@
 import pygame
 from .mem_module import Memory
-from .gui_module import Display
 from .cfg_module import Config
+from .gui_module import (
+    Display,
+    ElementType
+)
 from .cmd_module import (
     QuitCommand,
     ModifyScreenPtrCommand,
@@ -78,6 +81,11 @@ class App:
         try:
             screen = self.gui.screen_vec[self.gui.screen_ptr]
             self.screen.fill(screen.bg_color)
+
+            for element in screen.element_vec:
+                if element.type == ElementType.RECT:
+                    self.screen.blit(element.surface, element.pos)
+
             pygame.display.flip()
 
         except IndexError as err:
