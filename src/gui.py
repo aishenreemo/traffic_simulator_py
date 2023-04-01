@@ -1,8 +1,8 @@
 from pygame.sprite import Sprite
 from pygame import Surface
 from enum import Enum
-from .cfg_module import Config
-from .mem_module import Memory
+from .cfg import Config
+from .mem import Memory
 
 
 class Display:
@@ -73,7 +73,6 @@ def main_screen_init():
     gui = Display()
     mem = Memory()
 
-    print(cfg.colorscheme)
     screen = Screen("main")
     screen.bg_color = cfg.colorscheme["background"]
 

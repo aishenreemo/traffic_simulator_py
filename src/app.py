@@ -1,11 +1,11 @@
 import pygame
-from .mem_module import Memory
-from .cfg_module import Config
-from .gui_module import (
+from .mem import Memory
+from .cfg import Config
+from .gui import (
     Display,
     ElementType
 )
-from .cmd_module import (
+from .cmd import (
     QuitCommand,
     ModifyScreenPtrCommand,
     CommandType
