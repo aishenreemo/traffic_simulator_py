@@ -1,6 +1,7 @@
 import pygame
 from .mem_module import Memory
 from .gui_module import Display
+from .cfg_module import Config
 from .cmd_module import (
     QuitCommand,
     ModifyScreenPtrCommand,
@@ -27,9 +28,11 @@ class App:
         self.clock = pygame.time.Clock()
         self.delta = 0
 
+        self.cfg = Config()
         self.mem = Memory()
         self.gui = Display()
 
+        self.cfg.init()
         self.mem.init()
         self.gui.init()
 
